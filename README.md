@@ -11,4 +11,16 @@
  1. ButtonBox：定义多个按钮的文本内容，并返回被用户按下的按钮的文本(String)。
  2. ChoiceBox：自定义选项列表，返回被用户选中的选项(String)。
 
+
+# reSwing — Simple GUI module based on Swing
  
+ In the Python language, there are many simple modules that can quickly generate GUI interfaces without cumbersome design(such as [EasyGUI](https://easygui.readthedocs.io/en/master/?hmsr=aladdin1e5)),but In Java language, it is tedious to quickly generate a simple GUI graphical interface. Therefore, imitating the functions of EasyGUI in Python, the reSwing module was developed based on Java Swing.
+
+## Completed
+ 1. MsgBox: No return value, only used as a message reminder, without blocking the process.
+ 2. BoolBox: returns boolean, provides Yes/No selection function, will block the process until the user reacts.
+ 3. TextBox: Returns String[], providing multiple text boxes for obtaining user input, will block the process until the user reacts.
+ 
+## Plan List
+ 1. ButtonBox: Define the text content of multiple buttons and return the text of the button pressed by the user (String).
+ 2. ChoiceBox: Customize the option list and return the option selected by the user (String).
