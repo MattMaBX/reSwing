@@ -8,10 +8,11 @@
  3. TextBox：返回String[]，提供多个文本框用于获取用户输入。会阻塞进程直到用户作出反应。
  4. ButtonBox：返回String，提供多个按钮，用户点击后会返回按钮的标签。会阻塞进程直到用户作出反应。
  5. ChoiceBox：返回String，提供一个下拉菜单，并返回用户选中的项目。会阻塞进程直到用户作出反应。
+ 6. PasswordBox：返回String\[2\]，提供一个带有文本框（明文）和密码框（密文）的界面，返回文本（String\[0\]）和密码（String\[1\]）。会阻塞进程直到用户作出反应。
  
 ## 计划列表
- 1. ~~ButtonBox：定义多个按钮的文本内容，并返回被用户按下的按钮的文本(String)。~~ 已实现
- 2. ~~ChoiceBox：自定义选项列表，返回被用户选中的选项(String)。~~ 已实现
+ 1. DisplayBox：无返回值，在界面上显示指定的文本（文本量较大）。
+ 2. 优化现有代码，编写文档。
 
 
 # reSwing — Simple GUI module based on Swing
@@ -24,7 +25,7 @@
   3. TextBox: Returns String[], providing multiple text boxes for obtaining user input. Will block the process until the user reacts.
   4. ButtonBox: Returns String, provides multiple buttons, and returns the label of the button after the user clicks. Will block the process until the user reacts.
   5. ChoiceBox: Returns String, provides a drop-down menu, and returns the item selected by the user. Will block the process until the user reacts.
- 
+  6. PasswordBox: Returns String\[2\], provides an interface with a text box (clear text) and a password box (cipher text), returns text (String\[0\]) and password (String\[1\]). Will block the process until the user reacts.
 ## Plan List
- 1. ~~ButtonBox: Define the text content of multiple buttons and return the text of the button pressed by the user (String).~~ Completed
- 2. ~~ChoiceBox: Customize the option list and return the option selected by the user (String).~~ Completed
+  1. DisplayBox: No return value, display the specified text on the interface (the amount of text is large).
+  2. Optimize existing code and write documentation.
