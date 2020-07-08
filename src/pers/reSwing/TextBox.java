@@ -14,7 +14,7 @@ public class TextBox {
     private String[] Text;
     private final String title;
     private final String[] label;
-    final Object waitObject = new Object();
+    final Object waitObject = new Object(); //the symbol of Sync
 
     private final Thread createGUI = new Thread("create_GUI") {
         @Override
@@ -45,7 +45,6 @@ public class TextBox {
                 synchronized (waitObject) {
                     waitObject.notifyAll();
                 }
-                //System.out.println("解锁");
             });
             JButton cancel = new JButton("Cancel");
             cancel.addActionListener(e -> {
@@ -56,7 +55,6 @@ public class TextBox {
                     }
                     waitObject.notifyAll();
                 }
-                //System.out.println("解锁");
             });
             Buttons.add(submit);
             Buttons.add(cancel);
@@ -65,7 +63,6 @@ public class TextBox {
             frame.add(Buttons, BorderLayout.SOUTH);
             frame.setSize(350, (80 + 35 * number));
             frame.setLayout(new FlowLayout(FlowLayout.CENTER));
-            //frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             frame.setVisible(true);
             frame.addWindowListener(new WindowAdapter() {
                 @Override
@@ -99,15 +96,19 @@ public class TextBox {
         createGUI.start();
         waitValue.start();
         boolean done;
-        //System.out.println(waitValue.isAlive());
             do {
                 done = waitValue.isAlive();
             } while (done);
         return this.Text;
     }
 
-    public TextBox(String Title, String[] Label) {
+    public TextBox(String[] Label, String Title) {
         this.title = Title;
+        this.label = Label;
+    }
+
+    public TextBox(String[] Label) {
+        this.title = "TextBox";
         this.label = Label;
     }
 

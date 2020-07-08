@@ -14,9 +14,8 @@ public class ButtonBox {
     private final String[] label;
     private final String title;
     private final String massage;
-    private final int width;
     private String result;
-    private final Object waitObject = new Object();
+    private final Object waitObject = new Object(); //the symbol of Sync
 
     private final Thread createGUI = new Thread("create_GUI") {
         @Override
@@ -28,9 +27,9 @@ public class ButtonBox {
             JButton[] Buttons = new JButton[label.length];
             for (int i = 0; i < Buttons.length; i++) {
                 Buttons[i] = new JButton(label[i]);
-                int finalI = i;
+                int I = i;
                 Buttons[i].addActionListener(e -> {
-                    result = label[finalI];
+                    result = label[I];
                     frame.dispose();
                     synchronized (waitObject) {
                         waitObject.notifyAll();
@@ -38,16 +37,16 @@ public class ButtonBox {
                 });
             }
             JPanel panel2 = new JPanel();
+            panel2.setLayout(new FlowLayout(FlowLayout.CENTER));
             for (JButton button : Buttons) {
                 panel2.add(button);
             }
-            frame.add(panel1);
-            frame.add(panel2);
+            frame.add(panel1,BorderLayout.CENTER);
+            frame.add(panel2,BorderLayout.SOUTH);
             // Attributes:
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
-            frame.setSize(width,120);
-            frame.setLayout(new FlowLayout(FlowLayout.CENTER));
+            frame.pack();
             frame.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
@@ -84,30 +83,20 @@ public class ButtonBox {
         return result;
     }
 
-    public ButtonBox(String massage, String[] text, String title, int width) {
+    public ButtonBox(String massage, String[] text, String title) {
         this.title = title;
         this.massage = massage;
         this.label = text;
-        this.width = width;
-    }
-
-    public ButtonBox(String massage, String[] text, int width) {
-        this.title = "ButtonBox";
-        this.massage = massage;
-        this.label = text;
-        this.width = width;
     }
 
     public ButtonBox(String massage, String[] text) {
         this.title = "ButtonBox";
         this.massage = massage;
         this.label = text;
-        this.width = Math.max(130 + (massage.length() * 5) , 120 + (80 * label.length));
     }
     public ButtonBox() {
         this.title = "ButtonBox";
         this.massage = "This is a ButtonBox.";
         this.label = new String[]{"Button1","Button2","Button3"};
-        this.width = Math.max(130 + (massage.length() * 5) , 120 + (80 * label.length));
     }
 }

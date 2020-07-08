@@ -8,7 +8,7 @@ public class MsgBox{
      * It WILL NOT block process.
      * @author Matt.Ma
      */
-    public MsgBox(String title, String massage, String button_text) {
+    public MsgBox(String massage, String title, String button_text) {
         JFrame frame = new JFrame(title);
         // Elements:
         JPanel Massage = new JPanel();
@@ -23,10 +23,16 @@ public class MsgBox{
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.pack();
     }
-    public MsgBox(String massage) {
-        this("Massage",massage,"Exit");
+
+    public MsgBox(String massage, String title) {
+        this(massage, title, "Get");
     }
+
+    public MsgBox(String massage) {
+        this(massage, "MsgBox","Get");
+    }
+
     public MsgBox() {
-        this("Massage","I'm running!","Get");
+        this("I'm running!", "MsgBox", "Get");
     }
 }

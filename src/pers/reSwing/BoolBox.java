@@ -46,7 +46,6 @@ public class BoolBox {
             frame.add(Buttons,BorderLayout.SOUTH);
             // Attributes:
             frame.setLocationRelativeTo(null);
-            //frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             frame.setVisible(true);
             frame.pack();
             frame.addWindowListener(new WindowAdapter() {
@@ -79,11 +78,24 @@ public class BoolBox {
         createGUI.start();
         waitValue.start();
         boolean done;
-        //System.out.println(waitValue.isAlive());
         do {
             done = waitValue.isAlive();
         } while (done);
         return this.result;
+    }
+
+    public BoolBox(String massage, String title, String yes_text, String no_text) {
+        this.title = title;
+        this.massage = massage;
+        this.yes_text = yes_text;
+        this.no_text = no_text;
+    }
+
+    public BoolBox(String massage, String title) {
+        this.title = title;
+        this.massage = massage;
+        this.yes_text = "Yes";
+        this.no_text = "No";
     }
 
     public BoolBox(String massage) {
@@ -91,13 +103,6 @@ public class BoolBox {
         this.massage = massage;
         this.yes_text = "Yes";
         this.no_text = "No";
-    }
-
-    public BoolBox(String title, String massage, String yes_text, String no_text) {
-        this.title = title;
-        this.massage = massage;
-        this.yes_text = yes_text;
-        this.no_text = no_text;
     }
 
     public BoolBox() {
