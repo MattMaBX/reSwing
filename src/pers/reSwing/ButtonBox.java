@@ -76,10 +76,10 @@ public class ButtonBox {
     public String getResult() {
         createGUI.start();
         waitValue.start();
-        boolean done;
+        boolean working;
         do {
-            done = waitValue.isAlive();
-        } while (done);
+            working = waitValue.isAlive();
+        } while (working);
         return result;
     }
 

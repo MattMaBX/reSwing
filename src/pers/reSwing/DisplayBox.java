@@ -17,7 +17,7 @@ public class DisplayBox {
     private final int rows;
     private final int columns;
     private final boolean wait;
-    private final Object waitObject = new Object();
+    private final Object waitObject = new Object(); //the symbol of Sync
 
     private final Thread CreateGUI = new Thread("Create_GUI") {
         @Override
@@ -65,13 +65,13 @@ public class DisplayBox {
         }
     };
 
-    public void show() {
+    private void show() {
         CreateGUI.start();
         if (wait) waitValue.start();
-        boolean done;
+        boolean working;
         do {
-            done = waitValue.isAlive();
-        } while (done);
+            working = waitValue.isAlive();
+        } while (working);
     }
 
     public DisplayBox(String source, String title, int rows, int columns, boolean wait) {
@@ -80,6 +80,7 @@ public class DisplayBox {
         this.rows = rows;
         this.columns = columns;
         this.wait = wait;
+        show();
     }
 
     public DisplayBox(String source, String title, int rows, int columns) {
@@ -88,6 +89,7 @@ public class DisplayBox {
         this.rows = rows;
         this.columns = columns;
         this.wait = true;
+        show();
     }
 
     public DisplayBox(String source, String title) {
@@ -96,6 +98,7 @@ public class DisplayBox {
         this.rows = 10;
         this.columns = 30;
         this.wait = true;
+        show();
     }
 
     public DisplayBox(String source, String title, boolean wait) {
@@ -104,6 +107,7 @@ public class DisplayBox {
         this.rows = 10;
         this.columns = 30;
         this.wait = wait;
+        show();
     }
 
     public DisplayBox(String source) {
@@ -112,6 +116,7 @@ public class DisplayBox {
         this.rows = 10;
         this.columns = 30;
         this.wait = true;
+        show();
     }
 
     public DisplayBox(String source, boolean wait) {
@@ -120,6 +125,7 @@ public class DisplayBox {
         this.rows = 10;
         this.columns = 30;
         this.wait = wait;
+        show();
     }
 
     public DisplayBox() {
@@ -128,5 +134,6 @@ public class DisplayBox {
         this.rows = 10;
         this.columns = 30;
         this.wait = true;
+        show();
     }
 }

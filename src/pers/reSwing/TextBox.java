@@ -58,9 +58,9 @@ public class TextBox {
             });
             Buttons.add(submit);
             Buttons.add(cancel);
+            frame.add(Buttons, BorderLayout.SOUTH);
             // Attributes:
             frame.setLocationRelativeTo(null);
-            frame.add(Buttons, BorderLayout.SOUTH);
             frame.setSize(350, (80 + 35 * number));
             frame.setLayout(new FlowLayout(FlowLayout.CENTER));
             frame.setVisible(true);
@@ -92,13 +92,13 @@ public class TextBox {
         }
     };
 
-    public String[] getText() {
+    public String[] getResult() {
         createGUI.start();
         waitValue.start();
-        boolean done;
+        boolean working;
             do {
-                done = waitValue.isAlive();
-            } while (done);
+                working = waitValue.isAlive();
+            } while (working);
         return this.Text;
     }
 

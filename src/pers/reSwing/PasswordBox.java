@@ -57,9 +57,9 @@ public class PasswordBox {
             });
             buttons.add(OK);
             buttons.add(Cancel);
-            // Attributes:
             frame.add(totalPanel,BorderLayout.CENTER);
             frame.add(buttons,BorderLayout.SOUTH);
+            // Attributes:
             frame.setSize(420,150);
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
@@ -93,10 +93,10 @@ public class PasswordBox {
     public String[] getResult() {
         CreateGUI.start();
         waitValue.start();
-        boolean done;
+        boolean working;
         do {
-            done = waitValue.isAlive();
-        } while (done);
+            working = waitValue.isAlive();
+        } while (working);
         return (new String[]{this.text,this.password});
     }
 

@@ -77,10 +77,10 @@ public class BoolBox {
     public boolean getResult() {
         createGUI.start();
         waitValue.start();
-        boolean done;
+        boolean working;
         do {
-            done = waitValue.isAlive();
-        } while (done);
+            working = waitValue.isAlive();
+        } while (working);
         return this.result;
     }
 

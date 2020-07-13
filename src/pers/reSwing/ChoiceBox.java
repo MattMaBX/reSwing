@@ -69,10 +69,10 @@ public class ChoiceBox {
     public String getResult() {
         CreateGUI.start();
         waitValue.start();
-        boolean done;
+        boolean working;
         do {
-            done = waitValue.isAlive();
-        } while (done);
+            working = waitValue.isAlive();
+        } while (working);
         return this.result;
     }
 
