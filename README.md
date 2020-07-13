@@ -122,7 +122,7 @@ The PasswordBox class is used to generate a login interface where the user name 
 You can call the construction method PasswordBox() without parameters to initialize a sample object and call the getResult() method on it to display the sample window.
 
 ### 5. ChoiceBox class
-The ChoiceBox class is used to generate an interface with a drop-down menu for the user to choose, initialize the object using the constructor, **display the window and block the thread when the getResult() method is called, until the user clicks the confirm button or closes the window, and returns to the selected Items (string). **Construction method parameters include:
+The ChoiceBox class is used to generate an interface with a drop-down menu for the user to choose, initialize the object using the constructor, **display the window and block the thread when the getResult() method is called, until the user clicks the confirm button or closes the window, and returns to the selected Items (string).** Construction method parameters include:
 - String label: the label of the drop-down menu (cannot be omitted unless no parameters are passed in).
 - String[] items: All options in the drop-down menu (cannot be omitted unless no parameters are passed in).
 - String title: window title (the default value is ChoiceBox after being omitted).
@@ -130,7 +130,7 @@ The ChoiceBox class is used to generate an interface with a drop-down menu for t
 You can call the ChoiceBox() constructor without parameters to initialize a sample object and call the getResult() method on it to display the sample window.
 
 ### 6. ButtonBox class
-The ButtonBox class is used to generate a window containing prompt information and multiple buttons. The constructor is used to initialize the object. **When calling the getResult() method, the window is displayed and the thread is blocked until the user clicks the button or closes the window, and returns to the selected Item (String). **Construction method parameters include:
+The ButtonBox class is used to generate a window containing prompt information and multiple buttons. The constructor is used to initialize the object. **When calling the getResult() method, the window is displayed and the thread is blocked until the user clicks the button or closes the window, and returns to the selected Item (String).** Construction method parameters include:
 - String massage: prompt message text (cannot be omitted unless no parameters are passed in).
 - String[] text: The text of all buttons (cannot be omitted unless no parameters are passed in).
 - String title: Window title (the default value is ButtonBox when omitted).
@@ -138,7 +138,7 @@ The ButtonBox class is used to generate a window containing prompt information a
 You can call the ButtonBox() constructor without parameters to initialize a sample object and call the getResult() method on it to display the sample window.
 
 ### 7. DisplayBox class
-The DisplayBox class is similar to MsgBox, but it can display a larger amount of text, has the feature of word wrap, and does not return any value**. There is only one constructor in the class. After calling the constructor, initialize and display the window directly. **Parameter determines whether to block the thread (not blocked by default)**. Constructor parameters include:
+The DisplayBox class is similar to MsgBox, but it can display a larger amount of text, has the feature of word wrap, **and does not return any value**. There is only one constructor in the class. After calling the constructor, initialize and display the window directly. **Parameter determines whether to block the thread (not blocked by default)**. Constructor parameters include:
 - String source: The text content displayed in the window (cannot be omitted unless no parameters are passed in).
 - String title: window title (the default value is MsgBox when omitted).
 - int rows: the number of rows in the display area (can only be omitted with columns, the default value is 10 after being omitted).
