@@ -30,6 +30,7 @@
   6. PasswordBox: Returns String\[2\], provides an interface with a text box (clear text) and a password box (cipher text), returns text (String\[0\]) and password (String\[1\]). Will block the process until the user reacts.
   7. DisplayBox: No return value, similar to MsgBox, used to display large amounts of text. The process is not blocked by default, but it can be controlled by parameters.
   8. FileDisplayBox: No return value, inherited from DisplayBox, used to directly display the text in the file. The process is not blocked by default, but it can be controlled by parameters.
+
 ## Plan List
   1. ~~DisplayBox: No return value, display the specified text on the interface (the amount of text is large).~~ Complete
   2. Optimize existing code and write documentation.
