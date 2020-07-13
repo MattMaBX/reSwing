@@ -87,10 +87,10 @@ The design inspiration for this project comes from the [EasyGUI](https://easygui
 ### 1. MsgBox class
 
 The MsgBox class is used to generate a simple message popup and a button, **does not return any value**. There is only one constructor in the class. After calling the constructor, initialize and display the window directly. **Parameter determines whether to block the thread (not blocked by default)**. Constructor parameters include:
--String massage: The text content displayed in the pop-up window (cannot be omitted unless no parameters are passed in).
--String title: window title (the default value is MsgBox when omitted).
--String button_text: Button text (the default value is Get if omitted).
--boolean wait: Whether to block the thread (the default value is false if omitted).
+- String massage: The text content displayed in the pop-up window (cannot be omitted unless no parameters are passed in).
+- String title: window title (the default value is MsgBox when omitted).
+- String button_text: Button text (the default value is Get if omitted).
+- boolean wait: Whether to block the thread (the default value is false if omitted).
 
 You can call the constructor MsgBox() with no parameters to initialize a sample window.
 
