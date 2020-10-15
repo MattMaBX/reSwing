@@ -17,15 +17,13 @@ public class FileDisplayBox extends DisplayBox{
             return result;
         }
         else {
-            try {
-                BufferedReader reader = new BufferedReader(new FileReader(file));
+            try(BufferedReader reader = new BufferedReader(new FileReader(file))) {
                 StringBuilder buffer = new StringBuilder();
                 String s;
                 while ((s = reader.readLine()) != null) {
                     buffer.append(s.trim());
                 }
                 result = buffer.toString();
-                reader.close();
                 return result;
             } catch (IOException e) {
                 e.printStackTrace();

@@ -60,6 +60,7 @@ public class DisplayBox {
                     waitObject.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                    Thread.currentThread().interrupt();
                 }
             }
         }

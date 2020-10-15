@@ -56,6 +56,7 @@ public class MsgBox{
                         waitObject.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
+                        Thread.currentThread().interrupt();
                     }
                 }
             }
